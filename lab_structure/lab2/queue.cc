@@ -56,13 +56,13 @@ void queue<T>::shift()
 template <typename T>
 std::int64_t queue<T>::size()
 {
-    return left->size + right->size + 1;
+    return left->size + right->size + 2; // т.к. это функция, возвращаяем в человекочитаемом виде
 }
 
 template <typename T>
 void queue<T>::enqueue(T x)
 {
-    if (size() + 1 == capacity)
+    if (size() == capacity)
     {
         throw std::overflow_error("queue is overflowed");
     }
